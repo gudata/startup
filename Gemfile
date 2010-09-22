@@ -12,8 +12,10 @@ gem 'formtastic', '~> 1.1.0'
 gem "meta_search"  # Last officially released gem
 #gem 'searchlogic', ">=2.4.24"
 gem 'paperclip', '>= 2.3.3', :require => 'paperclip'
-gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
+
+source 'http://gems.github.com'
+gem 'devise'
 gem 'cancan', '>= 1.3.4'
 gem "mongoid", "2.0.0.beta.18", :require => 'mongoid'
 gem "bson_ext", "1.0.4"

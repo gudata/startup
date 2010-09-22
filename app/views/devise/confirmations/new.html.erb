@@ -1,0 +1,12 @@
+<h2>Изпрати инструкциите отново</h2>
+
+<%= semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <p><%= f.label :email %><br />
+  <%= f.text_field :email %></p>
+
+  <p><%= f.submit "Изпрати потвърждаващият емайл отново" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

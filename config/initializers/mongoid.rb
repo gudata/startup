@@ -1,1 +1,2 @@
-Mongoid.add_language("bg")
+Mongoid.add_language("en")
+#MongoTranslation::AVAILABLE_LOCALES = [:bg]

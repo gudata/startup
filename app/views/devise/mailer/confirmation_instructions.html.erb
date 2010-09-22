@@ -1,0 +1,6 @@
+<p>Здравей <%= @resource.email %>!</p>
+
+<p>Потвърди акаунта си, като отвориш следният адрес:</p>
+
+<p><%= link_to 'Потвърждавам', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+

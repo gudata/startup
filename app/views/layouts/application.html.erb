@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Кваратала</title>
-    <%= stylesheet_link_tag :all %>
+    <%= stylesheet_link_tag :all, "application.css" %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
     <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection"/>
@@ -10,6 +10,13 @@
     <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
   </head>
   <body>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
+    
+    <ul class="hmenu">
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+    </ul>
 
     <%= yield %>
 

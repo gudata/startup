@@ -1,11 +1,11 @@
 Kvartala::Application.routes.draw do
-  
-  root :controller => "navigations", :action => 'index'
-  
-  resources :navigations do
-    collection do
-      get :cities
-    end
+
+
+  devise_for :users
+  resources :users, :only => :show
+  root :to => "home#index"
+
+  resources :home do
   end
   
   namespace :admin do

@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-KvaratalaCom::Application.load_tasks
+Kvartala::Application.load_tasks
