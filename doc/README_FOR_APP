@@ -1,2 +1,19 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Градове (embeds_many)
+ Райони (embeds_in)
+  Квартали
+ 
+Обява ( Кратък текст, дълъг текст)
+ Трябва да може да се избират много кваратали в които да бъде видима.
+
+RSS feed
+  Име, Адрес, Адрес на feed-a, title, alt, Описание
+  
+Friends
+  Име, Адрес, title, alt, Описание
+
+CMS
+  title, body (redcloth), summary, author, published_at
+  
+Pictures
+  title, description, *...
+
