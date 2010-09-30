@@ -1,8 +1,8 @@
 class Admin::BaseController < ApplicationController
-  before_filter :require_user
+  before_filter :authenticate_user!
   layout "admin", :except => [:help]
   
-#  append_view_path("#{::Rails.root}/app/views/admin/nomenclature")
+  #  append_view_path("#{::Rails.root}/app/views/admin/nomenclature")
 
 
   protected

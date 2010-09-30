@@ -9,8 +9,14 @@ Kvartala::Application.routes.draw do
   end
   
   namespace :admin do
-
+    resources :towns do
+      resources :districts do
+        resources :quarters
+      end
+    end
   end
+#      resources :districts, :shallow => true do
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,23 @@
+<h1>Списък градове</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @towns.each do |town| %>
+    <tr>
+      <td><%= town.name %></td>
+      <td><%= link_to 'Show', [:admin, town] %></td>
+      <td><%= link_to 'Edit', edit_admin_town_path(town) %></td>
+      <td><%= link_to 'Destroy', [:admin, town], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Districts' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Town', new_admin_town_path %>
