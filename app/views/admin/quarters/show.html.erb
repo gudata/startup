@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<table>
 
-<%= link_to 'Edit', edit_quarter_path(@quarter) %> |
-<%= link_to 'Back', quarters_path %>
+  <tr>
+    <td>Квартали: <% @district.quarters.each do |quarter| %>
+        <p><%= quarter.name %></p>
+      <% end %></td>
+  </tr>
+
+</table>
+
+<br />
+
+<%= link_to 'Back', admin_town_district_quarters_path(@town, @district) %>

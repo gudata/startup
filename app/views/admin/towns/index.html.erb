@@ -10,14 +10,16 @@
   <% @towns.each do |town| %>
     <tr>
       <td><%= town.name %></td>
-      <td><%= link_to 'Show', [:admin, town] %></td>
-      <td><%= link_to 'Edit', edit_admin_town_path(town) %></td>
-      <td><%= link_to 'Destroy', [:admin, town], :confirm => 'Are you sure?', :method => :delete %></td>
-      <td><%= link_to 'Districts' %></td>
+      <td><%= link_to 'Покажи', [:admin, town] %></td>
+      <td><%= link_to 'Редактирай', edit_admin_town_path(town) %></td>
+      <td><%= link_to 'Изтрий', [:admin, town], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+    <tr>
+      <td><%= link_to 'Райони', admin_town_districts_path(town) %></td>
     </tr>
   <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Town', new_admin_town_path %>
+<%= link_to 'Нов град', new_admin_town_path %>

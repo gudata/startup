@@ -17,7 +17,7 @@ class Admin::DistrictsController < Admin::BaseController
   # GET /districts/1
   # GET /districts/1.xml
   def show
-    @district = District.find(params[:id])
+    #@district = District.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +28,7 @@ class Admin::DistrictsController < Admin::BaseController
   # GET /districts/new
   # GET /districts/new.xml
   def new
-    #    @district = District.new
+    @district = District.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @district }
@@ -51,7 +51,7 @@ class Admin::DistrictsController < Admin::BaseController
 
     respond_to do |format|
       if @district.save
-        format.html { redirect_to(edit_admin_town_district_path(@town, @district), :notice => 'District was successfully created.') }
+        format.html { redirect_to(edit_admin_town_district_path(@admin, @town, @district), :notice => 'District was successfully created.') }
         format.xml  { render :xml => @district, :status => :created, :location => @district }
       else
         format.html { render :action => "new" }

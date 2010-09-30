@@ -75,11 +75,12 @@ class Admin::TownsController < Admin::BaseController
   # DELETE /towns/1
   # DELETE /towns/1.xml
   def destroy
-    @town = Town.find(params[:id])
+
+   # @town = Town.find(params[:id])
     @town.destroy
 
     respond_to do |format|
-      format.html { redirect_to(towns_url) }
+      format.html { redirect_to [:admin, :towns], :notice => 'Town was successfully deleted.' }
       format.xml  { head :ok }
     end
   end

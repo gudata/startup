@@ -1,6 +1,6 @@
-<h1>Редактирай квартал</h1>
+<h1>Редактирай квартал <%= @quarter.name %></h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', [:admin, @town, @district, @quarter] %> |
-<%= link_to 'Back', admin_town_district_quarters_path(@district) %>
+<%= link_to 'Back', admin_town_district_quarters_path(@town, @district) %>

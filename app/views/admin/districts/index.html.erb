@@ -9,13 +9,18 @@
 
   <% @districts.each do |district| %>
     <tr>
-      <td><%= link_to 'Show', [:admin, district] %></td>
-      <td><%= link_to 'Edit', edit_admin_town_district_path(district) %></td>
-      <td><%= link_to 'Destroy', [:admin, district], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= district.name %></td>
+      <td><%= link_to 'Покажи', admin_town_district_path(:town_id => @town.id.to_param, :id => district.id.to_param) %></td>
+      <td><%= link_to 'Редактирай', edit_admin_town_district_path(@town, district) %></td>
+      <td><%= link_to 'Изтрий', [:admin, @town, district], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+    <tr>
+      <td><%= link_to 'Квартали', admin_town_district_quarters_path(@town, district) %></td>
     </tr>
   <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New District', new_admin_district_path %>
+<%= link_to 'Нов район', new_admin_town_district_path(@town) %> <br />
+<%= link_to 'Обратно', admin_towns_path %>

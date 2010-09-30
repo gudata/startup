@@ -1,4 +1,4 @@
-<%= form_for([:admin, @town, @district, @quarter]) do |f| %>
+<%= semantic_form_for([:admin, @town, @district, @quarter]) do |f| %>
   <% if @quarter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@quarter.errors.count, "error") %> prohibited this quarter from being saved:</h2>
@@ -11,12 +11,11 @@
     </div>
   <% end %>
 
-
   <% f.inputs :name => "Основна информация"  do %>
     <%= f.input :name %>
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.buttons %>
   </div>
 <% end %>

@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
-<h1>Град</h1>
-
+<h1>Град <%= @town.name %> </h1>
 <table>
+
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td>Град: <%= @town.name %></td>
+  </tr>
+  <tr>
+    <td>Райони: 
+      <% @town.districts.each do |district| %>
+        <p><%= district.name %></p>
+      <% end %>
+    </td>
   </tr>
 
-  <%= @town.name %>
+
+
 </table>
 
 <br />

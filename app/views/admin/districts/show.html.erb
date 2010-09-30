@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
+<h1>Район <%= @district.name %> </h1>
+
+<table>
+  <tr>
+    <td>Район: <%= @district.name %></td>
+  </tr>
+  <tr>
+    <td>Квартали: <% @district.quarters.each do |quarter| %>
+        <p><%= quarter.name %></p>
+      <% end %></td>
+  </tr>
+
+</table>
+
+<br />
 
 
-<%= link_to 'Edit', edit_district_path(@district) %> |
-<%= link_to 'Back', districts_path %>
+<%= link_to 'Back', admin_town_districts_path(@town) %>

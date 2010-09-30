@@ -1,10 +1,11 @@
 class Admin::QuartersController < Admin::BaseController
-    # cancan
-  load_resource :town, :parent => true
-  load_resource :district, :through => :town
-  load_resourse :quarter, :through => :district
   # GET /quarters
   # GET /quarters.xml
+
+  load_resource :town, :parent => true
+  load_resource :district, :through => :town
+  load_resource :quarter, :through => :district
+
   def index
     @quarters = Quarter.all
 
@@ -17,7 +18,7 @@ class Admin::QuartersController < Admin::BaseController
   # GET /quarters/1
   # GET /quarters/1.xml
   def show
-    @quarter = Quarter.find(params[:id])
+    #@quarter = Quarter.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,17 +39,17 @@ class Admin::QuartersController < Admin::BaseController
 
   # GET /quarters/1/edit
   def edit
-    @quarter = Quarter.find(params[:id])
+    # @quarter = Quarter.find(params[:id])
   end
 
   # POST /quarters
   # POST /quarters.xml
   def create
     #@quarter = Quarter.new(params[:quarter])
-
+    @quarter = @district.quarters.build(params[:quarter])
     respond_to do |format|
       if @quarter.save
-        format.html { redirect_to(edit_admin_town_district_quarters_path(@town, @district, @quarter), :notice => 'Quarter was successfully created.') }
+        format.html { redirect_to(edit_admin_town_district_quarter_path(@admin, @town, @district, @quarter), :notice => 'Quarter was successfully created.') }
         format.xml  { render :xml => @quarter, :status => :created, :location => @quarter }
       else
         format.html { render :action => "new" }
@@ -60,11 +61,11 @@ class Admin::QuartersController < Admin::BaseController
   # PUT /quarters/1
   # PUT /quarters/1.xml
   def update
-    #@quarter = Quarter.find(params[:id])
-
+    # @quarter = Quarter.find(params[:id])
+    @quarter = @district.quarters.find(params[:id])
     respond_to do |format|
       if @quarter.update_attributes(params[:quarter])
-        format.html { redirect_to(edit_admin_town_district_quarters_path(@town, @district, @quarter), :notice => 'Quarter was successfully updated.') }
+        format.html { redirect_to(edit_admin_town_district_quarter_path(@admin, @town, @district, @quarter), :notice => 'Quarter was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
