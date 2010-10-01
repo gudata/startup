@@ -1,7 +1,7 @@
 Kvartala::Application.routes.draw do
 
 
-  namespace :admin do resources :annons end
+  namespace :admin do resources :announcements end
 
   devise_for :users
   resources :users, :only => :show

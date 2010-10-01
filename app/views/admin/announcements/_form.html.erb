@@ -1,0 +1,27 @@
+<%= semantic_form_for(:admin, @admin_announcement) do |f| %>
+  <% if @admin_announcement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_announcement.errors.count, "error") %> prohibited this admin_announcement from being saved:</h2>
+
+      <ul>
+        <% @admin_announcement.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% f.inputs :title => "Основна информация"  do %>
+    <%= f.input :title %>
+  <% end %>
+  <% f.inputs :description => "Основна информация"  do %>
+    <%= f.input :description %>
+  <% end %>
+  <% f.inputs :author => "Основна информация"  do %>
+    <%= f.input :author %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.buttons %>
+  </div>
+<% end %>

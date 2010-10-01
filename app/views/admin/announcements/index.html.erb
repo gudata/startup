@@ -1,0 +1,26 @@
+<h1>Обяви</h1>
+
+<table>
+  <tr>
+    <th>Заглавие</th>
+    <th>Описание</th>
+    <th>Автор</th>
+    <th>Снимка</th>
+
+  </tr>
+
+  <% @admin_announcements.each do |admin_announcement| %>
+    <tr>
+      <td><%= link_to admin_announcement.title, admin_announcement %></td>
+      <td><%= admin_announcement.description %></td></p>
+      <td><%= admin_announcement.author %></td>
+      <td><%= admin_announcement.img_url %></td>
+      <td><%= link_to 'Edit', edit_admin_announcement_path(admin_announcement) %></td>
+      <td><%= link_to 'Destroy', admin_announcement, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Нова обява', new_admin_announcement_path %>

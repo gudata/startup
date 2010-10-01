@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Заглавие:</b>
+  <%= @admin_announcement.title %>
+</p>
+
+<p>
+  <b>Описание:</b>
+  <%= @admin_announcement.description %>
+</p>
+
+<p>
+  <b>Автор:</b>
+  <%= @admin_announcement.author %>
+</p>
+
+<p>
+  <b>Снимка:</b>
+  <%= @admin_announcement.img_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_announcement_path(@admin_announcement) %> |
+<%= link_to 'Back', admin_announcements_path %>
