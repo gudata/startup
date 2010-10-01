@@ -1,55 +1,55 @@
 class Admin::AnnouncementsController < Admin::BaseController
-  layout "admin", :except => [:help]
+  layout "admin"
   # GET /admin/announcements
   # GET /admin/announcements.xml
   def index
-    @admin_announcements = Admin::Announcement.all
+    @announcements = Announcement.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @admin_announcements }
     end
   end
 
   # GET /admin/announcements/1
   # GET /admin/announcements/1.xml
   def show
-    @admin_announcement = Admin::Announcement.find(params[:id])
+    @announcement = Announcement.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @admin_announcement }
+      format.xml  { render :xml => @announcement }
     end
   end
 
   # GET /admin/announcements/new
   # GET /admin/announcements/new.xml
   def new
-    @admin_announcement = Admin::Announcement.new
+    @announcement = Announcement.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @admin_announcement }
+      format.xml  { render :xml => @announcement }
     end
   end
 
   # GET /admin/announcements/1/edit
   def edit
-    @admin_announcement = Admin::Announcement.find(params[:id])
+    @announcement = Announcement.find(params[:id])
+    
   end
 
   # POST /admin/announcements
   # POST /admin/announcements.xml
   def create
-    @admin_announcement = Admin::Announcement.new(params[:admin_announcement])
+    @announcement = Announcement.new(params[:announcement])
 
     respond_to do |format|
-      if @admin_announcement.save
-        format.html { redirect_to(@admin_announcement, :notice => 'Announcement was successfully created.') }
-        format.xml  { render :xml => @admin_announcement, :status => :created, :location => @admin_announcement }
+      if @announcement.save
+        format.html { redirect_to(admin_announcement_path(@announcement), :notice => 'Announcement was successfully created.') }
+        format.xml  { render :xml => @announcement, :status => :created, :location => @announcement }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @admin_announcement.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @announcement.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -57,15 +57,15 @@ class Admin::AnnouncementsController < Admin::BaseController
   # PUT /admin/announcements/1
   # PUT /admin/announcements/1.xml
   def update
-    @admin_announcement = Admin::Announcement.find(params[:id])
+    @announcement = Announcement.find(params[:id])
 
     respond_to do |format|
-      if @admin_announcement.update_attributes(params[:admin_announcement])
-        format.html { redirect_to(@admin_announcement, :notice => 'Announcement was successfully updated.') }
+      if @announcement.update_attributes(params[:announcement])
+        format.html { redirect_to(edit_admin_announcement_path(@announcement), :notice => 'Announcement was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @admin_announcement.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @announcement.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -73,11 +73,11 @@ class Admin::AnnouncementsController < Admin::BaseController
   # DELETE /admin/announcements/1
   # DELETE /admin/announcements/1.xml
   def destroy
-    @admin_announcement = Admin::Announcement.find(params[:id])
-    @admin_announcement.destroy
+    #@announcement = Announcement.find(params[:id])
+    @announcement.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admin_announcements_url) }
+      format.html { redirect_to [@announcements] }
       format.xml  { head :ok }
     end
   end
