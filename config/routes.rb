@@ -1,6 +1,8 @@
 Kvartala::Application.routes.draw do
 
 
+  namespace :admin do resources :annons end
+
   devise_for :users
   resources :users, :only => :show
   root :to => "home#index"
@@ -11,8 +13,8 @@ Kvartala::Application.routes.draw do
   namespace :admin do
     resources :towns do
       resources :districts do
-        resources :quarters
-        
+        resources :quarters do
+        end
       end
     end
   end

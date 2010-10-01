@@ -1,0 +1,31 @@
+<h1>Listing admin_annons</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Author</th>
+    <th>Published at</th>
+    <th>Image url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_annons.each do |admin_annon| %>
+  <tr>
+    <td><%= admin_annon.title %></td>
+    <td><%= admin_annon.description %></td>
+    <td><%= admin_annon.author %></td>
+    <td><%= admin_annon.published_at %></td>
+    <td><%= admin_annon.image_url %></td>
+    <td><%= link_to 'Show', admin_annon %></td>
+    <td><%= link_to 'Edit', edit_admin_annon_path(admin_annon) %></td>
+    <td><%= link_to 'Destroy', admin_annon, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Annon', new_admin_annon_path %>

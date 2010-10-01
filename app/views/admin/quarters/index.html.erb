@@ -1,4 +1,4 @@
-<h1>Списък квартали</h1>
+<h1>Списък квартали <%= @town.name %> <%= @district.name %></h1>
 
 <table>
   <tr>
@@ -9,8 +9,7 @@
 
   <% @quarters.each do |quarter| %>
     <tr>
-      <td><%= quarter.name %></td>
-      <td><%= link_to 'Покажи', admin_town_district_quarter_path(:district_id => @district.id.to_param, :id => quarter.id.to_param) %></td>
+      <td><%= link_to quarter.name, admin_town_district_quarter_path(:district_id => @district.id.to_param, :id => quarter.id.to_param) %></td>
       <td><%= link_to 'Редактирай', edit_admin_town_district_quarter_path(@town, @district, quarter) %></td>
       <td><%= link_to 'Изтрий', [:admin, @town, @district, quarter], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
@@ -19,4 +18,5 @@
 
 <br />
 
-<%= link_to 'Нов квартал', new_admin_town_district_quarter_path(@town, @district, @quarter) %>
+<%= link_to 'Нов квартал', new_admin_town_district_quarter_path(@town, @district, @quarter) %> <br />
+<%= link_to 'Обратно', admin_town_districts_path %>

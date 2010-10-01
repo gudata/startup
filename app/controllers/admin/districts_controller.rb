@@ -51,7 +51,7 @@ class Admin::DistrictsController < Admin::BaseController
 
     respond_to do |format|
       if @district.save
-        format.html { redirect_to(edit_admin_town_district_path(@admin, @town, @district), :notice => 'District was successfully created.') }
+        format.html { redirect_to(edit_admin_town_district_path(:town_id => @town.id.to_param, :id => @district.id.to_param), :notice => 'District was successfully created.') }
         format.xml  { render :xml => @district, :status => :created, :location => @district }
       else
         format.html { render :action => "new" }
@@ -68,7 +68,7 @@ class Admin::DistrictsController < Admin::BaseController
 
     respond_to do |format|
       if @district.update_attributes(params[:district])
-        format.html { redirect_to(edit_admin_town_district_path(@town, @district), :notice => 'District was successfully updated.') }
+        format.html { redirect_to(edit_admin_town_district_path(:town_id => @town.id.to_param, :id => @district.id.to_param), :notice => 'District was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -80,12 +80,12 @@ class Admin::DistrictsController < Admin::BaseController
   # DELETE /districts/1
   # DELETE /districts/1.xml
   def destroy
-    @district = District.find(params[:id])
+    #@district = District.find(params[:id])
     @district.destroy
 
     respond_to do |format|
-      format.html { redirect_to(districts_url) }
-      format.xml  { head :ok }
-    end
-  end
-end
+      format.html { redirect_to admin_town_districts_path, :notice => 'Town was successfully deleted.' }
+        format.xml  { head :ok }
+        end
+        end
+        end

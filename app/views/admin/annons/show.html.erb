@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @admin_annon.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @admin_annon.description %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @admin_annon.author %>
+</p>
+
+<p>
+  <b>Published at:</b>
+  <%= @admin_annon.published_at %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @admin_annon.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_annon_path(@admin_annon) %> |
+<%= link_to 'Back', admin_annons_path %>

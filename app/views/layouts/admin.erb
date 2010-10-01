@@ -1,58 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>www.kvartala.com</title>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>www.kvartala.com</title>
     <%= stylesheet_link_tag :all, "admin.css" %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
 
-</head>
-<body>
+  </head>
+  <body>
 
-<div id="wrap">
+    <div id="wrap">
 
-<div id="header">
-<h1><a href="#">kvartala.com</a></h1>
-<h2>Сайтът за кварталите</h2>
+      <div id="header">
+        <h1><a href="#">www.kvartala.com</a></h1>
+        <h2>Сайтът за кварталите в България</h2>
 
-</div>
+      </div>
 
-<div id="top"> </div>
+      <div id="top"> </div>
 
-<div id="contentwrap">
+      <div id="contentwrap">
 
-<div id="content">
-  <%= yield %>
+        <div id="content">
+          <%= yield %>
 
-</div>
+        </div>
 
-<div id="sidebar">
-<h3>Главно меню</h3>
-<ul>
-<li><a href="#">Меню</a></li>
-<li><a href="#">Меню</a></li>
-<li><a href="#">Меню</a></li>
-<li><a href="#">Меню</a></li>
+        <div id="sidebar">
+          <h3>Главно меню</h3>
+          <ul>
+            <li><%= link_to 'Градове', [:admin, :towns] %></li>
+            <li><a href="#">Обяви</a></li>
+            <li><a href="#">RSS feed</a></li>
+            <li><a href="#">Приярели</a></li>
+            <li><a href="#">Снимки</a></li>
+          </ul>
 
-</ul>
 
+        </div>
 
-</div>
+        <div style="clear: both;"> </div>
 
-<div style="clear: both;"> </div>
+      </div>
 
-</div>
+      <div id="bottom"> </div>
 
-<div id="bottom"> </div>
+      <div id="footer">
+        <p>Design by <a href="http://www.gudasoft.com">Gudasoft</a></p>
 
-<div id="footer">
-<p>Design by <a href="http://www.gudasoft.com">Gudasoft</a></p>
+      </div>
 
-</div>
+    </div>
 
-</div>
-
-</body>
+  </body>
 </html>
