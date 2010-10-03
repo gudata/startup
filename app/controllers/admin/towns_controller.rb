@@ -1,4 +1,5 @@
 class Admin::TownsController < Admin::BaseController
+  
   # cancan
   load_resource :town
 

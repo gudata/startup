@@ -1,0 +1,25 @@
+<%= form_for(@admin_sign) do |f| %>
+  <% if @admin_sign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_sign.errors.count, "error") %> prohibited this admin_sign from being saved:</h2>
+
+      <ul>
+      <% @admin_sign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Заглавие:</b>
+  <%= @message.title %>
+</p>
+
+<p>
+  <b>Текст:</b>
+  <%= @message.body %>
+</p>
+
+<p>
+  <b>Дата:</b>
+  <%= @message.date %>
+</p>
+
+<p>
+  <b>Автор:</b>
+  <%= @message.author %>
+</p>
+
+
+<%= link_to 'Редактирай', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

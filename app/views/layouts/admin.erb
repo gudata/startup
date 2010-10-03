@@ -3,10 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>www.kvartala.com</title>
+    <title>www.kvartala.bg</title>
     <%= stylesheet_link_tag :all, "admin.css" %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
+    <link href="http://0.0.0.0:3000/messages.xml" rel="alternate" title="Квартала RSS" type="application/rss+xml">
+
+
 
   </head>
   <body>
@@ -14,7 +17,7 @@
     <div id="wrap">
 
       <div id="header">
-        <h1><a href="#">www.kvartala.com</a></h1>
+        <h1><a href="http://kvartala.bg">www.kvartala.bg</a></h1>
         <h2>Сайтът за кварталите в България</h2>
 
       </div>
@@ -31,11 +34,12 @@
         <div id="sidebar">
           <h3>Главно меню</h3>
           <ul>
-            <li><%= link_to 'Градове', [:admin, :towns] %></li>
-            <li><%= link_to 'Обяви',[:admin, :announcements] %></li>
-            <li><a href="#">RSS feed</a></li>
-            <li><a href="#">Приятели</a></li>
-            <li><a href="#">Снимки</a></li>
+            <li><%= link_to 'Градове', [:admin, :towns] %></li> 
+            <li><%= link_to 'Обяви', [:admin, :announcements] %></li>
+            <li><%= link_to 'Езици', [:admin, :languages] %></li>
+            <li><%= link_to 'Зодии', [:admin, :signs] %></li>
+            <li><%= link_to 'Съобщения', [:messages] %></li>
+            <li><%= link_to 'Страници', [:admin, :pages] %></li>
           </ul>
 
 

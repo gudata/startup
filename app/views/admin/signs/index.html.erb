@@ -1,0 +1,24 @@
+<h1>Списък зодии</h1>
+
+<table>
+  <tr>
+    <th>Зодия</th>
+    <th>Дата</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_signs.each do |admin_sign| %>
+  <tr>
+    <td><%= admin_sign.date %></td>
+    <td><%= link_to admin_sign.title, admin_sign %></td>
+    <td><%= link_to 'Редактирай', edit_admin_sign_path(admin_sign) %></td>
+    <td><%= link_to 'Изтрий', admin_sign, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Добави зoдия', new_admin_sign_path %>

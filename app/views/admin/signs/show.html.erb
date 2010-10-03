@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @admin_sign.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @admin_sign.date %>
+</p>
+
+
+<%= link_to 'Редактирай', edit_admin_sign_path(@admin_sign) %> |
+<%= link_to 'Back', admin_signs_path %>

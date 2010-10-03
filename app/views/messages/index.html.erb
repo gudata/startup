@@ -1,0 +1,28 @@
+<h1>Списък съобщения</h1>
+
+<table>
+  <tr>
+    <th>Заглавие</th>
+    <th>Текст</th>
+    <th>Дата</th>
+    <th>Автор</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%= link_to message.title, message %></td>
+      <td><%= message.body %></td>
+      <td><%= message.date %></td>
+      <td><%= message.author %></td>
+      <td><%= link_to 'Редактирай', edit_message_path(message) %></td>
+      <td><%= link_to 'Изтрий', message, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Ново съобщение', new_message_path %>

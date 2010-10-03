@@ -73,11 +73,11 @@ class Admin::AnnouncementsController < Admin::BaseController
   # DELETE /admin/announcements/1
   # DELETE /admin/announcements/1.xml
   def destroy
-    #@announcement = Announcement.find(params[:id])
+    @announcement = Announcement.find(params[:id])
     @announcement.destroy
 
     respond_to do |format|
-      format.html { redirect_to [@announcements] }
+      format.html { redirect_to [:admin, @announcement] }
       format.xml  { head :ok }
     end
   end

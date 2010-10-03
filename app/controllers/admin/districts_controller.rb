@@ -85,7 +85,7 @@ class Admin::DistrictsController < Admin::BaseController
 
     respond_to do |format|
       format.html { redirect_to admin_town_districts_path, :notice => 'Town was successfully deleted.' }
-        format.xml  { head :ok }
-        end
-        end
-        end
+      format.xml  { head :ok }
+    end
+  end
+end
