@@ -788,3 +788,13 @@ towns_hash.each do |town_name, districts_hаsh|
   town.save
 end
 
+def admin_language
+admin_languages = [
+
+  'английски език',
+  'немски език',
+  ]
+
+admin_languages.each do|language|
+  admin_language = language.create(:name => language)
+end

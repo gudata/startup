@@ -3,22 +3,177 @@
   <head>
     <title>Кваратала</title>
     <%= stylesheet_link_tag :all, "application.css" %>
-    <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
-    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection"/>
-    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print"/>
+    <link rel="stylesheet" href="/blueprint/screen.css" type="text/css" media="screen, projection"/>
+    <link rel="stylesheet" href="/blueprint/print.css" type="text/css" media="print"/>
     <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="stylesheets/application.css" type="text/css" media="screen, projection"/>
+    <link href="/images/logo.ico" rel="SHORTCUT ICON">
   </head>
+
   <body>
-    <div class="notice"><%= notice %></div>
-    <div class="alert"><%= alert %></div>
-    
-    <ul class="hmenu">
-      <%= render 'devise/menu/registration_items' %>
-      <%= render 'devise/menu/login_items' %>
-    </ul>
 
-    <%= yield %>
+    <div class="container span-24">
 
+
+      <div class="header column span-24 append-bottom">
+        <img alt="Кварталите в България" title="Кварталите в България" src="images/head.jpg" width="950px" />
+      </div>
+
+      <div class="menu column span-24 append-bottom">
+        <div id="menu">
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+          <div class="button">
+            <img src="/images/button.jpg" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="body_container span-24 prepend-top">
+
+        <div class="left column span-6">
+
+          <div id="box_left">
+            <div class="left_column_head">
+            </div>
+          </div>
+          <div class="left_column_body">
+            <div class="padding">
+              <div class="notice"><%= notice %></div>
+              <div class="alert"><%= alert %></div>
+
+              <ul class="hmenu">
+                <%= render 'devise/menu/registration_items' %>
+                <%= render 'devise/menu/login_items' %>
+              </ul>
+              <%= yield %>
+            </div>
+            <div class="left_column_head_second">
+            </div>
+            <div class="left_column_body">
+              <div class="padding">
+
+              </div>
+            </div>
+            <div class="left_column_head_second">
+            </div>
+            <div class="left_column_body">
+              <div class="padding">
+                # Разлог
+                # Ракитово
+                # Раковски
+                # Рила
+                # Роман
+                # Рудозем
+                # Садово
+                # Самоков
+                # Сандански
+                # Сапарева баня
+                # Свиленград
+                # Симитли
+                # Славяново
+                # Хасково
+                # Цар Калоян
+              </div>
+            </div>
+            <div class="left_column_footer">
+              <img src="/images/left_column_footer.jpg"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="main column span-11">
+
+          <div id="main_column">
+            <div class="main_column_head">
+              <div class="padding">
+                # Славяново
+                # Хасково
+                # Цар Калоян
+
+              </div>
+            </div>
+            <div class="main_column_body">
+              <div class="padding">
+                A MongoDB collection is a collection of BSON documents. These documents are usually have the same structure, but this is not a requirement since MongoDB is a schema-free  database. You may store a heterogeneous set of documents within a collection, as you do not need predefine the collection's "columns" or fields.
+
+                A collection is created when the first document is inserted.
+
+                Collection names should begin with letters or an underscore and may include numbers; $ is reserved. Collections can be organized in namespaces; these are named groups of collections defined using a dot notation. For example, you could define collections blog.posts and blog.authors, both reside under "blog". Note that this is simply an organizational mechanism for the user -- the collection namespace is flat from the database's perspective.
+              </div>
+            </div>
+            <div class="main_column_footer">
+              <img src="/images/main_column_footer.jpg" />
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="right column span-7 last">
+
+          <div id="right_column">
+            <div class="right_column_head">
+              <div class="padding">
+                # Славяново
+                # Хасково
+                # Цар Калоян
+              </div>
+            </div>
+            <div class="right_column_body">
+              <div class="padding">
+                # Търговище
+                # Живея в чужбина
+                # Ябланица
+                # Варна
+                # Видин
+                # Габрово
+                # Казанлък
+                # Пазар
+              </div>
+            </div>
+            <div class="right_column_head_shadowless">
+              <div class="padding">
+                uments within a coll
+              </div>
+            </div>
+            <div class="right_column_body">
+              <div class="padding">
+                uments within a collection, as you do not need predefine the collection's "columns" or fields. A collection is created when the first document is inserted. Collection names should begin with letters or an underscore and may include numbers; $ is reserved. Collections can be organized in namespaces; these are named groups of collections defined using a dot notation. For example, you could define collections blog.posts and blog.authors, both reside under "blog". Note that this is simply an organizational mechanism for the user -- the collection namespace is flat from the database's perspective.
+              </div>
+            </div>
+            <div class="right_column_footer">
+              <img src="/images/right_column_footer.jpg" width="270px" />
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="footer span-24 prepend-top">
+        <img src="/images/footer.gif">
+      </div>
+
+    </div>
   </body>
 </html>

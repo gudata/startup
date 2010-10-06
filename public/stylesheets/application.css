@@ -1,9 +1,103 @@
+body,.container.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 950px;
+    margin-top: 15px;
+    background-image :url('/images/fon.jpg');
+}
+
 ul.hmenu {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
+    list-style: none;
+    margin: 0 0 2em;
+    padding: 0;
 }
 
 ul.hmenu li {
-  display: inline;
+    display: inline;
+}
+
+#header {
+    margin-bottom:18px;
+}
+
+.button {
+    float: left;
+    width: 120px;
+    margin-right: 15px;
+}
+
+.padding
+{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-style: none;
+}
+
+#box_left 	{
+    width: 224px;
+    border-style: none;
+    text-align:justify;
+    float: left;
+}
+
+.left_column_head {
+    background-image: url('/images/left_column_head.jpg');
+    background-repeat: no-repeat;
+    height: 53px;
+}
+
+.left_column_head_second {
+    background-image: url('/images/left_column_head_shadowless.jpg');
+    background-repeat: no-repeat;
+    height: 47px;
+}
+
+.left_column_body {
+    background-image: url('/images/left_column_body.jpg');
+    background-repeat: repeat-y;
+}
+
+#main_column {
+    border-style: none;
+    float: left;
+    width: 428px;
+}
+
+.main_column_head {
+    background-image: url('/images/main_column_head.jpg');
+    background-repeat: no-repeat;
+    height: 78px;
+}
+
+.main_column_body {
+    background-image: url('/images/main_column_body.jpg');
+    background-repeat: repeat-y;
+}
+
+.right_column_head {
+    background-image: url('/images/right_column_head.jpg');
+    background-repeat: no-repeat;
+    border-style: none;
+    height: 63px;
+    float: left;
+    width: 270px;
+}
+
+.right_column_body {
+    background-image: url('/images/right_column_body.jpg');
+    background-repeat: repeat-y;
+    border-style: none;
+    width: 270px;
+    float: left;
+}
+
+.right_column_head_shadowless {
+    background-image: url('/images/right_column_head_shadowless.jpg');
+    background-repeat: no-repeat;
+    border-style: none;
+    height: 57px;
+    float: left;
+    width: 270px;
 }
