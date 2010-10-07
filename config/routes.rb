@@ -1,23 +1,21 @@
 Kvartala::Application.routes.draw do
 
-
   resources :messages
-
-  namespace :admin do resources :pages end
-
-  namespace :admin do resources :signs end
-
-  namespace :admin do resources :languages end
 
   devise_for :users
   resources :users, :only => :show
   root :to => "home#index"
 
-  resources :home do
-  end
+  resources :home
+  resource :town
+
+  match 'admin' => 'admin/navigations#index'
   
   namespace :admin do
-    resources :announcements 
+    resources :announcements
+    resources :pages
+    resources :signs
+    resources :languages
     resources :towns do
       resources :districts do
         resources :quarters do

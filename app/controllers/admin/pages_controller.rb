@@ -3,7 +3,7 @@ class Admin::PagesController < Admin::BaseController
   # GET /admin/pages
   # GET /admin/pages.xml
   def index
-    @admin_pages = Admin::Page.all
+    @admin_pages = Page.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class Admin::PagesController < Admin::BaseController
   # GET /admin/pages/1
   # GET /admin/pages/1.xml
   def show
-    @admin_page = Admin::Page.find(params[:id])
+    @admin_page = Page.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +25,7 @@ class Admin::PagesController < Admin::BaseController
   # GET /admin/pages/new
   # GET /admin/pages/new.xml
   def new
-    @admin_page = Admin::Page.new
+    @admin_page = Page.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +35,13 @@ class Admin::PagesController < Admin::BaseController
 
   # GET /admin/pages/1/edit
   def edit
-    @admin_page = Admin::Page.find(params[:id])
+    @admin_page = Page.find(params[:id])
   end
 
   # POST /admin/pages
   # POST /admin/pages.xml
   def create
-    @admin_page = Admin::Page.new(params[:admin_page])
+    @admin_page = Page.new(params[:admin_page])
 
     respond_to do |format|
       if @admin_page.save
@@ -57,7 +57,7 @@ class Admin::PagesController < Admin::BaseController
   # PUT /admin/pages/1
   # PUT /admin/pages/1.xml
   def update
-    @admin_page = Admin::Page.find(params[:id])
+    @admin_page = Page.find(params[:id])
 
     respond_to do |format|
       if @admin_page.update_attributes(params[:admin_page])
@@ -73,7 +73,7 @@ class Admin::PagesController < Admin::BaseController
   # DELETE /admin/pages/1
   # DELETE /admin/pages/1.xml
   def destroy
-    @admin_page = Admin::Page.find(params[:id])
+    @admin_page = Page.find(params[:id])
     @admin_page.destroy
 
     respond_to do |format|

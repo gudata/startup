@@ -8,7 +8,7 @@ gem 'rails', '3.0.0'
 # Use unicorn as the web server
 gem 'unicorn'
 gem 'formtastic', '~> 1.1.0'
-#gem 'will_paginate', :branch => "rails3" '>= 3.0.pre2'
+gem 'will_paginate', :branch => "rails3" '>= 3.0.pre2'
 gem "meta_search"  # Last officially released gem
 #gem 'searchlogic', ">=2.4.24"
 gem 'paperclip', '>= 2.3.3', :require => 'paperclip'
@@ -20,11 +20,13 @@ gem 'cancan', '>= 1.3.4'
 gem "mongoid", "2.0.0.beta.18", :require => 'mongoid'
 gem "bson_ext", "1.0.4"
 
+gem "meta_search"
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+gem 'ruby-debug'
 
 # Bundle the extra gems:
 # gem 'bj'

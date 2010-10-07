@@ -1,9 +1,12 @@
 class Admin::LanguagesController < Admin::BaseController
+  
+  # Rad: Admin::Language модела става Language, контролера продължава да си седи в Admin::
+
   layout "admin"
   # GET /admin/languages
   # GET /admin/languages.xml
   def index
-    @admin_languages = Admin::Language.all
+    @admin_languages = Language.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +17,7 @@ class Admin::LanguagesController < Admin::BaseController
   # GET /admin/languages/1
   # GET /admin/languages/1.xml
   def show
-    @admin_language = Admin::Language.find(params[:id])
+    @admin_language = Language.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +28,7 @@ class Admin::LanguagesController < Admin::BaseController
   # GET /admin/languages/new
   # GET /admin/languages/new.xml
   def new
-    @admin_language = Admin::Language.new
+    @admin_language = Language.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +38,13 @@ class Admin::LanguagesController < Admin::BaseController
 
   # GET /admin/languages/1/edit
   def edit
-    @admin_language = Admin::Language.find(params[:id])
+    @admin_language = Language.find(params[:id])
   end
 
   # POST /admin/languages
   # POST /admin/languages.xml
   def create
-    @admin_language = Admin::Language.new(params[:admin_language])
+    @admin_language = Language.new(params[:admin_language])
 
     respond_to do |format|
       if @admin_language.save
@@ -57,7 +60,7 @@ class Admin::LanguagesController < Admin::BaseController
   # PUT /admin/languages/1
   # PUT /admin/languages/1.xml
   def update
-    @admin_language = Admin::Language.find(params[:id])
+    @admin_language = Language.find(params[:id])
 
     respond_to do |format|
       if @admin_language.update_attributes(params[:admin_language])
@@ -73,7 +76,7 @@ class Admin::LanguagesController < Admin::BaseController
   # DELETE /admin/languages/1
   # DELETE /admin/languages/1.xml
   def destroy
-    @admin_language = Admin::Language.find(params[:id])
+    @admin_language = Language.find(params[:id])
     @admin_language.destroy
 
     respond_to do |format|

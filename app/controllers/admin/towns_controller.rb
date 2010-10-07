@@ -6,8 +6,11 @@ class Admin::TownsController < Admin::BaseController
   # GET /towns
   # GET /towns.xml
   def index
-    @towns = Town.all
 
+    @search = TownSearch.new(params[:search] || {})
+    town = @search.get_wheres
+    @towns = town.all.paginate(:page => params[:page], :per_page => 25)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @towns }
@@ -77,7 +80,7 @@ class Admin::TownsController < Admin::BaseController
   # DELETE /towns/1.xml
   def destroy
 
-   # @town = Town.find(params[:id])
+    # @town = Town.find(params[:id])
     @town.destroy
 
     respond_to do |format|

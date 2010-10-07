@@ -1,8 +1,9 @@
 class Town
   include Mongoid::Document
   
-  field :name #, :type => String
-    
+  field :name
+  field :main_city, :type => Boolean
+  
   embeds_many :districts
 
 end

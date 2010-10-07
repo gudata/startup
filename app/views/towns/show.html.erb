@@ -1,0 +1,15 @@
+<% content_for :title do %>
+<h1>Избери квартал от <%= @town.name %></h1>
+<% end %>
+
+<ul>
+  <%
+  @town.districts.each do |disctict|
+    disctict.quarters.each do |quarter|
+    %>
+      <%= content_tag :li, link_to(quarter.name, "#") %>
+    <%
+    end
+  end
+%>
+</ul>

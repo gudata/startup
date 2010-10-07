@@ -1,6 +1,13 @@
 
 <h1>Списък градове</h1>
 
+<%= form_for :search, @search, :html => {:method => :get} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+  <%= f.submit "Search"%>
+<% end %>
+
+
 <table>
   <tr>
     <th></th>
@@ -9,7 +16,7 @@
   </tr>
 
   <% @towns.each do |town| %>
-    <tr> 
+    <tr>
       <td><%= link_to town.name, [:admin, town] %></td>
       <td><%= link_to 'Редактирай', edit_admin_town_path(town) %></td>
       <td><%= link_to 'Изтрий', [:admin, town], :confirm => 'Are you sure?', :method => :delete %></td>
@@ -17,7 +24,9 @@
     </tr>
   <% end %>
 </table>
-
+  
+<%= will_paginate @towns %>
+  
 <br />
 
 <%= link_to 'Нов град', new_admin_town_path %>

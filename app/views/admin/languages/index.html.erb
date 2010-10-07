@@ -8,11 +8,11 @@
     <th></th>
   </tr>
 
-<% @admin_languages.each do |admin_language| %>
+<% @admin_languages.each do |language| %>
   <tr>
-    <td><%= link_to admin_language.title, admin_language %></td>
-    <td><%= link_to 'Редактирай', edit_admin_language_path(admin_language) %></td>
-    <td><%= link_to 'Изтрий', admin_language, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to language.name, [:admin, language] %></td>
+    <td><%= link_to 'Редактирай', edit_admin_language_path(language) %></td>
+    <td><%= link_to 'Изтрий', [:admin, language], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

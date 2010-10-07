@@ -3,7 +3,7 @@ class Admin::SignsController < Admin::BaseController
   # GET /admin/signs
   # GET /admin/signs.xml
   def index
-    @admin_signs = Admin::Sign.all
+    @admin_signs = Sign.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class Admin::SignsController < Admin::BaseController
   # GET /admin/signs/1
   # GET /admin/signs/1.xml
   def show
-    @admin_sign = Admin::Sign.find(params[:id])
+    @admin_sign = Sign.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +25,7 @@ class Admin::SignsController < Admin::BaseController
   # GET /admin/signs/new
   # GET /admin/signs/new.xml
   def new
-    @admin_sign = Admin::Sign.new
+    @admin_sign = Sign.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +35,13 @@ class Admin::SignsController < Admin::BaseController
 
   # GET /admin/signs/1/edit
   def edit
-    @admin_sign = Admin::Sign.find(params[:id])
+    @admin_sign = Sign.find(params[:id])
   end
 
   # POST /admin/signs
   # POST /admin/signs.xml
   def create
-    @admin_sign = Admin::Sign.new(params[:admin_sign])
+    @admin_sign = Sign.new(params[:admin_sign])
 
     respond_to do |format|
       if @admin_sign.save
@@ -57,7 +57,7 @@ class Admin::SignsController < Admin::BaseController
   # PUT /admin/signs/1
   # PUT /admin/signs/1.xml
   def update
-    @admin_sign = Admin::Sign.find(params[:id])
+    @admin_sign = Sign.find(params[:id])
 
     respond_to do |format|
       if @admin_sign.update_attributes(params[:admin_sign])
@@ -73,7 +73,7 @@ class Admin::SignsController < Admin::BaseController
   # DELETE /admin/signs/1
   # DELETE /admin/signs/1.xml
   def destroy
-    @admin_sign = Admin::Sign.find(params[:id])
+    @admin_sign = Sign.find(params[:id])
     @admin_sign.destroy
 
     respond_to do |format|

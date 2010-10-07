@@ -52,7 +52,7 @@
         <div class="left column span-6">
 
           <div id="box_left">
-            <div class="left_column_head">
+            <div class="left_column_head_first">
             </div>
           </div>
           <div class="left_column_body">
@@ -74,25 +74,12 @@
               </div>
             </div>
             <div class="left_column_head_second">
+              <h1>Градове</h1>
             </div>
-            <div class="left_column_body">
-              <div class="padding">
-                # Разлог
-                # Ракитово
-                # Раковски
-                # Рила
-                # Роман
-                # Рудозем
-                # Садово
-                # Самоков
-                # Сандански
-                # Сапарева баня
-                # Свиленград
-                # Симитли
-                # Славяново
-                # Хасково
-                # Цар Калоян
-              </div>
+            <div class="left_column_body padding">
+              <% @towns.each do |town| %>
+                <%= content_tag :li, link_to(town.name, town_path(:id => town.id.to_param)) %>
+              <% end %>
             </div>
             <div class="left_column_footer">
               <img src="/images/left_column_footer.jpg"/>
@@ -105,19 +92,12 @@
           <div id="main_column">
             <div class="main_column_head">
               <div class="padding">
-                # Славяново
-                # Хасково
-                # Цар Калоян
-
+                <%= yield :title %>
               </div>
             </div>
-            <div class="main_column_body">
+            <div class="main_column_body ">
               <div class="padding">
-                A MongoDB collection is a collection of BSON documents. These documents are usually have the same structure, but this is not a requirement since MongoDB is a schema-free  database. You may store a heterogeneous set of documents within a collection, as you do not need predefine the collection's "columns" or fields.
-
-                A collection is created when the first document is inserted.
-
-                Collection names should begin with letters or an underscore and may include numbers; $ is reserved. Collections can be organized in namespaces; these are named groups of collections defined using a dot notation. For example, you could define collections blog.posts and blog.authors, both reside under "blog". Note that this is simply an organizational mechanism for the user -- the collection namespace is flat from the database's perspective.
+                <%= yield %>
               </div>
             </div>
             <div class="main_column_footer">
